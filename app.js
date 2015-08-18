@@ -1,7 +1,7 @@
 var express = require('express');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-
+var fs = require('fs');
 
 /******REQUIRE ROUTES**********/
 var homeRoute = require('./routes/index');
@@ -15,7 +15,7 @@ var tokenCheckerMiddleWare = require('./routes/middleware/tokenChecker');
 var app = express();
 
 
-app.use(logger('dev'));
+app.use(logger('dev',{skip: function (req, res) { return res.statusCode < 400 }}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
