@@ -5,8 +5,8 @@ var bodyParser = require('body-parser');
 
 /******REQUIRE ROUTES**********/
 var homeRoute = require('./routes/index');
-var apiV1Routes = require('./routes/api/v1/index');
-var apiV2Routes = require('./routes/api/v2/index');
+var apiV1Routes = require('./routes/api/v1Routes');
+var apiV2Routes = require('./routes/api/v2Routes');
 var authenticateRoute = require('./routes/authenticate');
 /******END********************/
 
